@@ -3,88 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jesse Bautista III | Private Digital Twin</title>
+    <title>Jesse Bautista III | Official Executive & Enterprise Authority Hub</title>
+    <meta name="description" content="Official digital footprint and master authority hub for Jesse Bautista III: CEO of BAUTISTA INC., Owner of Handyman Painting L.L.C, and Founder/Producer of $ee Money Productions LLC.">
     <link rel="stylesheet" href="style.css">
-    <!-- Include Three.js for 3D Digital Twin Rendering -->
+    <!-- Three.js for interactive background visualization -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://jessebautistaiii.com/#identity",
+          "name": "Jesse Bautista III",
+          "givenName": "Jesse",
+          "additionalName": "Bautista III",
+          "jobTitle": "Executive Principal, CEO & Producer",
+          "url": "https://jessebautistaiii.com/",
+          "sameAs": [
+            "https://bautistainc.com",
+            "http://seemoneyproductions.com",
+            "https://handymanpaintingllc.co",
+            "https://github.com/construction-crypto"
+          ],
+          "alternateName": [
+            "Teests El Diablo",
+            "Lil Devil"
+          ],
+          "knowsAbout": [
+            "Enterprise Management",
+            "Commercial and Federal Contracting",
+            "Residential and Commercial Painting",
+            "Audio Engineering",
+            "Music Production"
+          ],
+          "worksFor": [
+            {
+              "@type": "Corporation",
+              "@id": "https://bautistainc.com/#organization",
+              "name": "BAUTISTA INC.",
+              "url": "https://bautistainc.com/"
+            },
+            {
+              "@type": "LocalBusiness",
+              "@id": "https://handymanpaintingllc.co/#organization",
+              "name": "Handyman Painting L.L.C",
+              "url": "https://handymanpaintingllc.co/"
+            },
+            {
+              "@type": "MusicGroup",
+              "@id": "http://seemoneyproductions.com/#organization",
+              "name": "$ee Money Productions LLC",
+              "url": "http://seemoneyproductions.com/"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
-    <!-- Private Authentication Gate Overlay -->
-    <div id="auth-gate" class="auth-overlay">
-        <div class="auth-box">
-            <h2>Restricted Access</h2>
-            <p>Cryptographic verification required for Digital Twin initialization.</p>
-            <input type="password" id="passkey-input" placeholder="Enter Secure Passkey..." />
-            <button onclick="verifyAccess()">Authenticate</button>
-        </div>
-    </div>
-
-    <!-- Main Private Digital Twin Dashboard (Hidden by default) -->
-    <div id="dashboard-container" style="display: none;">
-        <div id="canvas-container"></div>
-        <div class="hud-overlay">
-            <h1>Jesse Bautista III // Digital Twin</h1>
-            <div class="hud-grid">
-                <div class="hud-card">
-                    <h3>BAUTISTA INC.</h3>
-                    <p>Status: Active</p>
-                </div>
-                <div class="hud-card">
-                    <h3>Handyman Painting L.L.C</h3>
-                    <p>Status: Active (320-321-9359)</p>
-                </div>
-                <div class="hud-card">
-                    <h3>$ee Money Productions</h3>
-                    <p>Alias: Teests El Diablo / Lil Devil</p>
-                </div>
-            </div>
-        </div>
+    <div id="canvas-container"></div>
+    <div class="hud-overlay">
+        <header>
+            <h1>Jesse Bautista III</h1>
+            <p class="subtitle">Executive Principal | Enterprise Leader | Audio Producer</p>
+        </header>
+        <main>
+            <section class="bio-card">
+                <h2>Independent Enterprise Ecosystem</h2>
+                <p>Jesse Bautista III is an independent business owner, corporate executive, and music producer based in Minnesota. He oversees and directs the following distinct commercial and creative entities:</p>
+                <ul>
+                    <li><strong>BAUTISTA INC.</strong> (<a href="https://bautistainc.com" target="_blank">bautistainc.com</a>): Corporate Enterprise Management. Role: CEO & Founder.</li>
+                    <li><strong>Handyman Painting L.L.C</strong> (<a href="https://handymanpaintingllc.co" target="_blank">handymanpaintingllc.co</a> | <a href="https://construction.seemoneyproductions.com" target="_blank">construction.seemoneyproductions.com</a>): Interior/Exterior Painting & Home Improvement for residential, commercial, state, and federal clients. Founder: Jesse J Bautista. Owner: Jesse Bautista III.</li>
+                    <li><strong>$ee Money Productions LLC</strong> (<a href="http://seemoneyproductions.com" target="_blank">seemoneyproductions.com</a>): Professional recording studio and production house. Owner, Founder & Producer: Jesse Bautista III (Alias: Teests El Diablo / Lil Devil).</li>
+                </ul>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2026 Jesse Bautista III. All rights reserved.</p>
+        </footer>
     </div>
 
     <script>
-        function verifyAccess() {
-            const input = document.getElementById('passkey-input').value;
-            // Local client-side security gate placeholder (will be replaced with Vercel Edge Auth / JWT)
-            if (input === "JB3-SECURE-2026") {
-                document.getElementById('auth-gate').style.display = 'none';
-                document.getElementById('dashboard-container').style.display = 'block';
-                init3DEnvironment();
-            } else {
-                alert('Access Denied. Invalid Credentials.');
-            }
-        }
+        // 3D Background Visualization for public digital twin feel
+        const container = document.getElementById('canvas-container');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        container.appendChild(renderer.domElement);
 
-        function init3DEnvironment() {
-            const container = document.getElementById('canvas-container');
-            const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-            
+        const geometry = new THREE.IcosahedronGeometry(3, 2);
+        const material = new THREE.MeshBasicMaterial({ color: 0x38bdf8, wireframe: true, transparent: true, opacity: 0.25 });
+        const core = new THREE.Mesh(geometry, material);
+        scene.add(core);
+
+        camera.position.z = 6;
+
+        function animate() {
+            requestAnimationFrame(animate);
+            core.rotation.x += 0.002;
+            core.rotation.y += 0.004;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
-            container.appendChild(renderer.domElement);
-
-            // Placeholder Digital Twin Core Node (Wireframe Hologram Avatar Node)
-            const geometry = new THREE.IcosahedronGeometry(2, 2);
-            const material = new THREE.MeshBasicMaterial({ color: 0x38bdf8, wireframe: true });
-            const avatarCore = new THREE.Mesh(geometry, material);
-            scene.add(avatarCore);
-
-            camera.position.z = 5;
-
-            function animate() {
-                requestAnimationFrame(animate);
-                avatarCore.rotation.x += 0.005;
-                avatarCore.rotation.y += 0.01;
-                renderer.render(scene, camera);
-            }
-            animate();
-
-            window.addEventListener('resize', () => {
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(window.innerWidth, window.innerHeight);
-            });
-        }
+        });
     </script>
 </body>
 </html>
